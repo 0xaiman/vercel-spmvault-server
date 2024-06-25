@@ -19,6 +19,8 @@ import dashboardProfileMath from './controller/users.controller/user.attempts/da
 import connectionFirebase from './database/connectionFirebase.js';
 import { uploadFirebase } from './middleware/uploadFirebase.js';
 import uploadFileFirebase from './controller/media-file.controller/uploadFileFirebase.js';
+import "dotenv/config";
+
 const app = express()
 // const port = 3030
 
@@ -81,6 +83,13 @@ app.use('/serve/assets', express.static(path.join(__dirname, 'assets')));
 //serve images
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${port}`)
-})
+try{
+  app.listen(process.env.PORT_SERVER, () => {
+    console.log(`Server running on port ${process.env.PORT_SERVER }`)
+  })
+  
+
+}catch(error){
+  console.log("Listen ERROR",error)
+}
+
