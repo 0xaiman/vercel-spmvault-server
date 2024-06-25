@@ -20,7 +20,7 @@ import connectionFirebase from './database/connectionFirebase.js';
 import { uploadFirebase } from './middleware/uploadFirebase.js';
 import uploadFileFirebase from './controller/media-file.controller/uploadFileFirebase.js';
 const app = express()
-const port = 3000
+const port = 3030
 
 //important middleware
 app.use(express.json());
