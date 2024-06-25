@@ -20,7 +20,7 @@ import connectionFirebase from './database/connectionFirebase.js';
 import { uploadFirebase } from './middleware/uploadFirebase.js';
 import uploadFileFirebase from './controller/media-file.controller/uploadFileFirebase.js';
 const app = express()
-const port = 3030
+// const port = 3030
 
 //important middleware
 app.use(express.json());
@@ -81,6 +81,6 @@ app.use('/serve/assets', express.static(path.join(__dirname, 'assets')));
 //serve images
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${port}`)
 })
